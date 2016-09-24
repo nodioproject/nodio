@@ -2,11 +2,11 @@
 
 https://nodio.net
 
-<b>What is Nodio?
+What is Nodio?
 
 Nodio is a hardware blockchain-based complex with guaranteed privacy. Nodio performs a significant number of functions, starting from providing an Internet connection and finishing with the ability to fully manage the whole smart home. It is a comfortable and intuitive solution which solves multiple problems people face on an everyday basis. Nodio substitutes a router by delivering a top-speed connection to your devices. It also works as a personal micro server - stores decentralized applications and their data while protecting them by using a high-level encryption combined with blockchain resources.
 
-Xana
+Xana Platform
 
 Nodio works with decentralized applications built on Xana platform. All dapps developed on Xana and ran on Nodio have an open source, so you could see for yourself that they are totally transparent and have no pitfalls. Nodio enables creating a working connection scheme with no central unit (which, in most cases, gets easily hacked). The main goal of this device is to become a tool for the developers to build end-to-end decentralized applications with a zero-knowledge proof.
 
