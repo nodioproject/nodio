@@ -1,0 +1,96 @@
+@import "../variables.styl"
+
+/* Product styles */
+#product-tech
+  .page-header
+    height 0
+    padding 0
+  .page-content
+    padding 30px 0 0
+    margin 0
+    font-size 0
+  .illustrations
+    margin 59px 0 0 -31px
+    width 421px
+    display inline-block
+    vertical-align top
+    overflow visible
+    &:before
+      padding-top 100%
+    .illustration
+      size 421px 662px
+      &.device
+        retina-image('~images/pages/product-tech.png', 100% auto, "@2x")
+      &.border
+        retina-image('~images/pages/product-tech-border.png', 100% auto, "@2x")
+  .right-side
+    width 391px
+    display inline-block
+    vertical-align top
+    margin 0 0 0 60px
+  .title
+    font-size 38px
+    line-height 54px
+    margin-bottom 60px
+    .bold
+      font-size 72px
+      line-height 66px
+      
+  .text
+    width 100%
+  .links
+    padding-right 15px
+    margin-top 81px
+    text-align left
+    white-space nowrap
+    .download
+      size 9px
+      display inline-block
+      margin 0 5px 0 1px
+      fill $turquoise
+
+  .delimiter
+    margin 0 55px
+  &.show
+    .illustrations .illustration.border
+      animation-delay 2.3s
+  .page-footer
+    height 113px
+    margin-top 0
+    
++media-query(only screen, max-width 1080px)
+  #product-tech
+    .page-footer
+      height 65px
++media-query(only screen, max-width $mobileWidth)
+  #product-tech
+    .illustrations
+      size 100%
+      // width 28%   
+      // width 34vmin
+      // width 43vmin
+      margin auto
+      display block
+      .border
+        transform translate3d(-50%,-50%,0) rotate(90deg)
+    .right-side
+      width 100%
+      display block
+      margin 0 auto
+    .text
+      text-align justify
+    .links
+      margin-top 31px
+      text-align center
+
+for $i in 0..30
+  $height = $expand_height + $i * $expand_height_step
+  $before = floor(($i + 1) / 2) * $expand_height_step
+  $after = floor($i / 2) * $expand_height_step
+  
+  +media-query(only screen, min-height $height)
+    #product-tech .page-content
+      &:before
+        height $before
+      &:after
+        height $after

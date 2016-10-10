@@ -1,0 +1,54 @@
+@import "../variables.styl"
+
+/* Pagination styles */
+#pagination
+  width 30px
+  absolute 244px 37px false false
+  z-index 10
+  opacity 0
+  visibility hidden
+  &.show
+    animation fade-in 1s linear 2s forwards
+    &.fast
+      animation fade-in 1s linear forwards
+  .pagination-item
+    display block
+    relative false
+    size 13px 11px
+    margin 19px 0 0 0
+    fill $white
+    background-color transparent
+    transition fill 0.2s linear
+    cursor pointer
+    .active
+    .inactive
+      fill inherit
+      absolute 0
+      transition opacity 0.2s linear
+    .active
+      opacity 0
+    .inactive
+      opacity 1
+    &:hover
+      fill rgba(23, 229, 178, 1)
+    &.active
+      cursor default
+      .active
+        opacity 1
+      .inactive
+        opacity 0
+    &:nth-child(even)
+      margin-left 30px
+      
+$start = 720px
+$step = 60px
+for $i in 0..30
+  $height = $start + $i * $step
+  $margin = floor($i / 2) * $step
+  +media-query(only screen, min-height $height)
+    #pagination
+      margin-top $margin
+      
++media-query(only screen, max-width $mobileWidth)
+  #pagination
+    display none

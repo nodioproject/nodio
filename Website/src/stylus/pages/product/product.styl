@@ -1,0 +1,154 @@
+@import "../variables.styl"
+
+/* Product styles */
+#product
+  padding 0
+  overflow visible
+  .title
+    height 110px
+    absolute 50px 0 0
+    z-index 4
+    margin auto 0
+    .bold
+      font-size 75px
+  .illustrations
+    z-index 0
+    overflow visible
+    &:before
+      padding-top 95%
+    .illustration
+      height 1006px
+      &.show
+        opacity 1
+      &.hover-1
+      &.image-1
+      &.image-2
+      &.image-3
+        max-width 144%
+        absolute 0 -22%
+        transform scale(0.694)
+        transform-origin 50% 50%
+        background-position 50%  50%
+        background-size 100% auto
+        background-repeat no-repeat
+      &.hover-1
+        retina-image('~images/pages/product-1.png', 100% auto, "@2x")
+        animation none
+        max-height 0
+        z-index 3
+      &.image-1
+        retina-image('~images/pages/product-1.png', 100% auto, "@2x")
+        z-index 2
+      &.image-2
+        retina-image('~images/pages/product-2.png', 100% auto, "@2x")
+        z-index 1
+      &.image-3
+        retina-image('~images/pages/product-3.png', 100% auto, "@2x")
+        z-index 0
+  .texts
+    opacity 0
+    absolute 415px 0 0
+    margin auto
+    display table
+  .subtitle
+    font-size 26px
+    font-weight 300
+    line-height 42px
+    letter-spacing 1px
+    margin-bottom 10px
+    text-align center
+  .text
+    width 100%
+    font-size 16px
+    text-align center
+    
+  .page-footer
+    size 100% 33px
+    margin -85px auto 0
+  .next-link
+    animation fade-in 0.2s linear reverse forwards
+    
+  &.slide-1
+    .title
+      animation fade-in 1s linear 0.5s forwards
+    .illustrations 
+      .image-1
+        animation fade-in 1.5s linear 1s forwards
+      .image-2
+      .image-3
+        animation fade-out 0s linear forwards
+      .hover-1
+        max-height 1006px
+        transition opacity 0.5s linear,
+                   max-height 0s linear 3.5s
+        &.hover
+          cursor pointer
+          &:hover
+            opacity 1
+    .texts
+      display none
+    .next-link
+      animation fade-in 1s linear 2.5s forwards
+      
+  &.slide-2
+    .title
+      animation fade-out 2s linear forwards
+    .illustrations
+      .animation
+        animation none
+      .hover-1
+        z-index -1
+        max-height 1006px
+        transition opacity 0.5s linear,
+                   max-height 0s linear 3.5s
+      .image-1
+        animation fade-out 2s linear forwards
+      .image-2
+        animation fade-in 2s linear 0s forwards
+      .image-2
+      .image-3
+        transform scale(0.694)
+    .texts
+    .text
+      animation fade-in 1s linear 3.5s forwards
+    .next-link
+      animation fade-out 0.2s linear 0s forwards
+  &.slide-3
+    .title
+      animation fade-out 0s linear forwards
+    .illustrations
+      .image-2
+      .image-3
+        transform scale(1)
+      .image-2
+        animation fade-out 1s linear 0s forwards
+        transition transform 1s ease-in-out 0s
+      .image-3
+        animation fade-in 1s linear 0s forwards
+        transition transform 1s ease-in-out 0s
+    .texts
+    .text
+      animation fade-in 0s linear 0s forwards
+    .next-link
+      animation fade-in 1s linear 2s forwards
+                
+
++media-query(only screen, max-width $mobileWidth)
+  #product
+    // .page-content
+    //   transform translateY(-30px)
+    .illustrations
+      margin-bottom -30%
+      &:before
+        padding-top 100%
+    .title
+      width 335px
+      absolute 0
+      margin auto
+    .texts
+      relative 0
+    .next-link
+      relative false 0 30px
+    &.slide-1 
+      .next-link
+        fixed false 0 30px

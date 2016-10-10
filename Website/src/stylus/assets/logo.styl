@@ -1,0 +1,171 @@
+@import "../variables.styl"
+
+.preloader-logo-wrap
+  size 120px
+  absolute 50% false false 50%
+  transform: translate(-50%, -50%);
+  svg
+    fill #ff0
+  
+.preloader-logo
+.square
+  size $preloader-logo-size
+  absolute 50% false false 50%
+  margin auto
+  transform-origin 85% -35%
+  transform rotate(45deg) translate3d(0, 0, 0)
+  -webkit-backface-visibility hidden
+  -webkit-transform-style preserve-3d
+.preloader-logo
+  background-color background-color
+  z-index 1
+  .inner
+  .middle
+  .outer
+    absolute 50% false false 50%
+    transform translate(-50%, -50%) translate3d(0, 0, 0)
+  .inner
+    size $preloader-logo-inner-size
+    .item-1
+      top 0
+      left 0
+    .item-2
+      top 0
+      right 0
+    .item-3
+      bottom 0
+      right 0
+    .item-4
+      bottom 0
+      left 0
+  .middle
+    size $preloader-logo-medium-size
+    .item-1
+      top 1px
+      left 1px
+    .item-2
+      top 0
+      left 11px
+    .item-3
+      top 0
+      right 11px
+    .item-4
+      top 1px
+      right 1px
+    .item-5
+      top 11px
+      right 0
+    .item-6
+      bottom 11px
+      right 0
+    .item-7
+      bottom 1px
+      right 1px
+    .item-8
+      bottom 0
+      right 11px
+    .item-9
+      bottom 0
+      left 11px
+    .item-10
+      bottom 1px
+      left 1px
+    .item-11
+      bottom 11px
+      left 0
+    .item-12
+      top 11px
+      left 0
+  .outer
+    size $preloader-logo-outer-size
+    .item-1
+      top 1px
+      left 1px
+    .item-2
+      top 1px
+      left 12px
+    .item-3
+      top 0
+      left 23px
+    .item-4
+      top 0
+      right 23px
+    .item-5
+      top 1px
+      right 12px
+    .item-6
+      top 1px
+      right 1px
+    .item-7
+      top 12px
+      right 1px
+    .item-8
+      top 23px
+      right 0
+    .item-9
+      bottom 23px
+      right 0
+    .item-10
+      bottom 12px
+      right 1px
+    .item-11
+      bottom 1px
+      right 1px
+    .item-12
+      bottom 1px
+      right 12px
+    .item-13
+      bottom 0
+      right 23px
+    .item-14
+      bottom 0
+      left 23px
+    .item-15
+      bottom 1px
+      left 12px
+    .item-16
+      bottom 1px
+      left 1px
+    .item-17
+      bottom 12px
+      left 1px
+    .item-18
+      bottom 23px
+      left 0
+    .item-19
+      top 23px
+      left 0
+    .item-20
+      top 12px
+      left 1px
+  .border
+    size $preloader-logo-size
+    box-sizing border-box
+    border $preloader-logo-border-size solid $preloader-logo-color
+    opacity 0
+    transition opacity $preloader-logo-transition-time linear
+    &.show
+      opacity 1
+.preloader-logo-point
+  absolute false
+  border-radius 50%
+  background-color $preloader-logo-color
+  opacity 0
+  transform scale(0.001) translate3d(0, 0, 0)
+  transition transform $preloader-logo-transition-time linear,
+             opacity $preloader-logo-transition-time linear
+  -webkit-backface-visibility hidden
+  overflow hidden
+  .show &
+    opacity 1
+    transform scale(1) translate3d(0, 0, 0)
+  &.big
+    size $preloader-logo-point-big
+  &.medium
+    size $preloader-logo-point-medium
+  &.small
+    size $preloader-logo-point-small
+
+.square
+  z-index 0
+  border 0px solid $square-border-color

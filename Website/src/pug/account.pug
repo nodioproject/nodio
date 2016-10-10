@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    include assets/head.pug
+  body
+    include ../images/svg-sprite.pug
+    #background
+      #glow
+        svg
+          use(xlink:href="#glow-svg")
+      .container
+        include account/login.pug

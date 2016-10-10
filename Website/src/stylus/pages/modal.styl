@@ -1,0 +1,337 @@
+@import "../variables.styl"
+
+/* Modal styles */
+#modal
+  fixed 0
+  z-index -1
+  opacity 0
+  size 100%
+  background-color #000
+  transition opacity 0.3s linear,
+             z-index 0s linear 0.3s
+  &.show
+    z-index 101
+    opacity 1
+    transition opacity 0.3s linear,
+               z-index 0s linear
+    
+  #modal-close
+    absolute false 30px 30px false
+    margin 0 auto
+    size 31px
+    cursor pointer
+    fill rgba(23, 229, 178, 0.2)
+    transition fill 0.2s linear
+    &:hover
+      fill rgba(23, 229, 178, 1)
+    .full
+      animation fade-in 0.2s linear forwards
+    .mobile
+      animation fade-out 0.2s linear forwards
+  
+  .modal
+    absolute 35px 30px 70px
+    margin auto
+    display none
+    max-width 840px
+    &.show
+      display block
+    .modal-wrap
+      width 100%
+      max-width 600px
+      margin auto
+    
+      
++media-query(only screen, max-width 1019px)
+  #modal
+    #modal-close
+      size 19px
+      absolute -11px 10px false false
+      .full
+        animation fade-out 0.2s linear forwards
+      .mobile
+        animation fade-in 0.2s linear forwards
+      
+.mobile-menu
+  width 200px
+  padding 0
+  margin 0 auto
+  list-style none
+  .mobile-menu-item
+    size 100% 90px
+    &:before
+      display none
+  .menu-link
+  .modal-link
+    relative false
+    color $white
+    font-size 30px
+    font-weight 700
+    text-transform uppercase
+    text-decoration none
+    &.active
+      color $turquoise
+      .line
+        background-color $turquoise-20
+    .line
+      absolute false 0 0
+      size 100% 1px
+      display block
+      background-color $white
+      transition background-color $sidebar-line-transition-time linear
+.modal-content
+  size 100%
+  overflow auto
+  letter-spacing 1.3px
+  .heading
+    padding-right 10px
+    margin-bottom 50px
+    font-size 36px
+    font-weight 700
+    letter-spacing 3px
+  .text
+    padding-right 10px
+    margin-bottom 35px
+    font-size 14px
+    font-weight 300
+    line-height 30px
+    text-align justify
+    color rgba(255, 255, 255, 0.5)
+    &.right
+      text-align right
+  .link
+    color rgba(23, 229, 178, 0.5)
+    text-decoration none
+    &:hover
+      color rgba(23, 229, 178, 1)
+  ul
+    padding-right 10px
+    margin-bottom 45px
+    list-style-type: none;
+    li
+      font-size 14px
+      font-weight 300
+      line-height 30px
+      color rgba(255, 255, 255, 0.5)
+      &:before
+        content '-'
+        display inline-block
+        margin-right 35px
+  ol
+    padding-right 10px
+    counter-reset item
+    li
+      font-size 14px
+      font-weight 300
+      line-height 30px
+      text-transform none
+      color rgba(255, 255, 255, 0.5)
+      &:before
+        content counters(item, ".") "."
+        counter-increment item
+        display inline-block
+        margin-right 5px
+    &.alpha
+      padding-left 20px
+      margin-bottom 0
+      counter-reset alpha
+      li
+        &:before
+          content "(" counter(alpha, upper-alpha) ") "
+          counter-increment alpha
+        
+    #modal-policy &
+      margin-bottom 45px
+      li
+        &:before
+          margin-right 26px
+    #modal-terms &
+    #modal-policy &
+      &.article > li
+        color $white
+        margin-bottom 45px
+        text-transform uppercase
+        font-weight 700
+      
+  .subheading
+    padding-right 10px
+    margin 50px 0
+    font-size 18px
+    font-weight 600
+    letter-spacing 3px
+    text-transform uppercase
+    
+  .faq-block
+    padding-right 10px
+    margin-bottom 25px
+    cursor pointer
+    &:hover
+      .arrow
+        fill rgba(23, 229, 178, 1)
+    &.open
+      .arrow
+        transform rotate(90deg)
+        fill rgba(23, 229, 178, 1)
+      .answer
+        max-height 200px
+        transform rotateX(0deg)
+  .clicker
+    display block
+  .arrow
+    display inline-block
+    size 6px 11px
+    margin-right 28px
+    fill rgba(23, 229, 178, 0.2)
+    cursor pointer
+    transform-origin 50% 100%
+    transition fill 0.2s linear,
+               transform 0.2s linear
+  .question
+    display inline
+    font-size 18px
+    font-weight 300
+    line-height 24px
+    color rgba(255, 255, 255, 0.5)
+  .answer
+    font-size 14px
+    font-weight 300
+    line-height 18px
+    margin 10px 0 0 37px
+    color rgba(255, 255, 255, 0.5)
+    max-height 0
+    transform rotateX(-90deg)
+    transform-origin 0% 0%
+    transition transform 0.2s linear,
+               max-height 0.2s linear
+               
+  .specs-
+    &wrap
+      min-width 860px
+      display table
+      size 100%
+    &content
+      display table-cell
+      vertical-align middle
+    &block
+      display inline-block
+      vertical-align top
+      width 230px
+      padding-left 30px
+      box-sizing border-box
+      font-size 14px
+      font-weight 300
+      line-height 24px
+      letter-spacing 0.7px
+      &.common
+        width 380px
+        padding-left 0
+    &heading
+      margin 23px 0 0
+      font-weight 700
+      text-transform uppercase 
+      letter-spacing 1.5px
+    &param
+      color rgba(255, 255, 255, 0.75)
+    &details
+      color rgba(255, 255, 255, 0.5)
+    &definition
+    &value
+      display inline-block
+      color rgba(255, 255, 255, 0.5)
+    &definition
+      width 125px
+    &value
+      width 75px
+    &tips
+      relative false
+    &tip
+      absolute 24px false false
+      color $white-50
+      border 1px solid $white-20
+      padding 7px
+      white-space nowrap
+      line-height 14px
+      &:before
+        content ''
+        size 7px
+        display block
+        absolute -5px false false
+        text-align center
+        transform rotate(45deg)
+        background-color $black
+        border-top 1px solid $white-20
+        border-left 1px solid $white-20
+      &.left
+        width 103px
+        right 58px
+        &:before
+          left 71px
+      &.right
+        width 92px
+        left 62px
+        &:before
+          left 7px
++media-query(only screen, max-width 900px)
+  .modal-content
+    .specs-
+      &wrap
+        min-width 300px
+      &block
+        display block
+        width 300px
+        margin 0 auto
+        padding-left 0
+        &.common
+          width 300px
++media-query(only screen, max-width 480px)
+  .modal-content
+    .specs-
+      &block
+        .mobile-hide
+          display none
+        .mobile-block
+          display block
+      &tip
+        &.left
+          right 88px
+          &:before
+            left 101px
+        &.right
+          left 32px
+          &:before
+            left 37px
+
+#modal-crowdsale
+  .modal-content
+    width 600px
+    .heading
+      font-size 36px
+      line-height 44px
+      letter-spacing 4px
+    .header
+      padding-left 60px
+      margin 90px 0 60px
+      font-size 28px
+      line-height 34px
+      letter-spacing 2px
+      relative false
+      .number
+        absolute 0 false 0 0
+        z-index -1
+        margin auto
+        height 35px
+        font-size 150px
+        font-weight 700
+        color rgba(23, 229, 178, 0.1)
+        letter-spacing 11px
+      .important
+        font-size 54px
+        font-weight 700
+        line-height 42px
+        
+      .indent
+        padding-left 8px
+        
+    .important
+      color $white
+      

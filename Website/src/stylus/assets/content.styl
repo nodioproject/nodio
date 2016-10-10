@@ -1,0 +1,79 @@
+@import "../variables.styl"
+
+/* Content styles */
+#background
+  overflow hidden
+  relative false
+  width 100%
+  background-image url('~images/background.svg')
+  background-position 50% 0
+  background-size 60px 60px
+  background-repeat repeat
+
+#glow
+  fixed 0
+  z-index 0
+  overflow hidden
+  opacity 0
+  transition opacity 1s linear
+  &.show
+    opacity 1
+  .glow-container
+    absolute 50% false false 50%
+    transform translate(-50%, -50%)
+    size 100%
+    size 100vmax
+    
+.container
+  relative false
+  width auto
+  min-width 360px
+  min-height 736px
+  margin auto
+  padding 0 90px 0 89px
+  box-sizing border-box
+  transition width 0.3s linear,
+             padding-left 0.3s linear,
+             padding-right 0.3s linear
+  .navigation
+    absolute 0 0 false
+
+#sidebar
+  opacity 0
+  max-height 0
+  transition opacity $content-show-transition-time linear,
+             max-height 0s linear $content-show-transition-time,
+             overflow 0s linear $content-show-transition-time
+  &.show
+    z-index 2
+    opacity 1
+    max-height 10000px
+    transition opacity $content-show-transition-time linear,
+               max-height 0s linear,
+               overflow 0s linear
+    
++media-query(only screen, max-width $mobileWidth)
+  #background
+    background-image none
+    min-height 100%
+  .container
+    min-height 100%
+    width 100%
+    padding 70px 0 0
+    .navigation
+      fixed 0 0 false
+      z-index 2
+      size 100% 60px
+      background-image linear-gradient(180deg, rgba(0,0,0,1),  rgba(0,0,0,1) 70%,  rgba(0,0,0,0))
+      background-position 0 0
+      background-size 100% 100%
+      background-repeat no-repeat
+    .navigation-content
+      relative 7px 0 0
+      margin auto
++media-query(only screen, min-width 1020px, max-width 1080px)
+  .container
+    padding 0 30px 0 89px
++media-query(only screen, max-width 1080px)
+  #background
+    background-position calc("50% - 30px", 50%) 0

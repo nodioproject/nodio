@@ -1,0 +1,130 @@
+@import "../variables.styl"
+
+/* Common styles */
+html
+  height 100%
+html
+body
+  width 100%
+  min-height 100%
+  font-family "ProximaNova"
+  font-size $common-body-font-size
+  font-weight 300
+  color $common-body-text-color
+  background-color $common-body-background-color
+body
+  // text-rendering optimizeLegibility
+  // -webkit-font-smoothing antialiased
+  // -moz-osx-font-smoothing grayscale
+  // text-size-adjust none
+  -webkit-backface-visibility hidden
+  letter-spacing $common-body-letter-spacing
+svg
+  size 100%
+  display block
+  fill inherit
+  &#svg-sprite
+    width 0
+    height 0
+    overflow hidden
+    
+button
+input
+textarea
+  font-family inherit
+  
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+  transition background-color 50000s ease-in-out 50000s
+  color inherit !important
+
+.bold
+  font-weight 700
+
+.point
+  absolute false
+  size 1px
+  background-color $common-point-background-color
+  &.center
+    absolute 0
+    margin auto
+  &.top
+    top -1px
+    bottom auto
+  &.bottom
+    bottom -1px
+    top auto
+  &.left
+    left -1px
+    right auto
+  &.right
+    right -1px
+    left auto
+
+.links
+  display block
+  margin-top 55px
+  .link
+    font-size $common-link-font-size
+    font-weight 300
+    letter-spacing 1px
+    text-decoration none
+    color $common-link-color
+    border-bottom 1px solid $contacts-button-border-color
+    transition border-color $transition-time linear
+    &:hover
+      border-color $common-link-color
+  .delimiter
+    size 1px 11px
+    margin 0 50px
+    background-color $common-delimiter-background-color
+    display inline-block
+
+.blink.show
+  animation blink $content-blink-animation-time linear forwards
+  
+@keyframes blink
+  0%
+    opacity 0
+  20%
+    opacity .6
+  40%
+    opacity .2
+  60%
+    opacity .8
+  80%
+    opacity .4
+  100%
+    opacity 1
+
+@keyframes fade-in
+  0%
+    visibility visible
+  1%
+    opacity 0
+  100%
+    opacity 1
+    visibility visible
+
+@keyframes fade-out
+  0%
+    opacity 1
+  99%
+    opacity 0
+  100%
+    opacity 0
+    visibility hidden
+
+@keyframes slide-down-centered
+  0%
+    opacity 0
+    top 45%
+  50%
+    opacity 0
+  100%
+    top 50%
+    opacity 1
+
+

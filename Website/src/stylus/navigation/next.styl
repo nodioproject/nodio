@@ -1,0 +1,37 @@
+@import "../variables.styl"
+
+/* Next styles */
+.next-link
+  display block
+  size 33px
+  margin 0 auto
+  opacity 0
+  visibility hidden
+  cursor pointer
+  fill rgba(23, 229, 178, 0.2)
+  transition fill 0.2s linear
+  #xana &
+  #dapps &
+  #team &
+  #contacts &
+    animation fade-in 0.2s linear forwards
+  &:hover
+    fill rgba(23, 229, 178, 1)
+  .show &
+    animation fade-in 0.2s linear forwards
+
+// @keyframes next-in
+//   0%
+//     z-index 10
+//   1%
+//     opacity 0
+//   100%
+//     opacity 1
+
+// @keyframes next-out
+//   0%
+//     opacity 1
+//   99%
+//     opacity 0
+//   100%
+//     z-index -1

@@ -1,0 +1,94 @@
+#preloader
+  .user-data
+    dl.progress
+      dt.progress.print(
+        data-print-step="1"
+        data-print-setting="info"
+      ) Visitor info
+      dd.progress.print.percent(
+        data-print-step="1"
+        data-print-setting="info_percent"
+      ) 0%
+    .user-data-block
+      dl.definition.location
+        dt.location.print.statistics(
+          data-print-step="2"
+          data-print-setting="header_all"
+        ) Location:
+        dd.location.print.statistics(
+          data-print-step="3"
+          data-print-setting="header_string"
+          data-print-string="location"
+        )
+      dl.definition.provider
+        dt.provider.print.statistics(
+          data-print-step="4"
+          data-print-setting="header_all"
+        ) Provider:
+        dd.provider.print.statistics(
+          data-print-step="5"
+          data-print-setting="header_string"
+          data-print-string="provider"
+        )
+      dl.definition.global_ip
+        dt.global_ip.print.statistics(
+          data-print-step="6"
+          data-print-setting="header_all"
+        ) Global ip:
+        dd.global_ip.print.statistics(
+          data-print-step="7"
+          data-print-setting="header_string"
+          data-print-string="global_ip"
+        )
+      dl.definition.local_ip
+        dt.local_ip.print.statistics(
+          data-print-step="8"
+          data-print-setting="header_all"
+        ) Local ip:
+        dd.local_ip.print.statistics(
+          data-print-step="9"
+          data-print-setting="header_string"
+          data-print-string="local_ip"
+        )
+      dl.definition.device
+        dt.device.print.statistics(
+          data-print-step="10"
+          data-print-setting="header_all"
+        ) Device:
+        dd.device.print.statistics(
+          data-print-step="11"
+          data-print-setting="header_string"
+          data-print-string="device"
+        )
+      dl.definition.os
+        dt.os.print.statistics(
+          data-print-step="12"
+          data-print-setting="header_all"
+        ) OS:
+        dd.os.print.statistics(
+          data-print-step="13"
+          data-print-setting="header_string"
+          data-print-string="os"
+        )
+      dl.definition.browser
+        dt.browser.print.statistics(
+          data-print-step="14"
+          data-print-setting="header_all"
+        ) Browser:
+        dd.browser.print.statistics(
+          data-print-step="15"
+          data-print-setting="header_string"
+          data-print-string="browser"
+        )
+  include ../assets/logo.pug
+  .square
+
+  .use-audio
+    p.print(
+      data-print-step="1"
+      data-print-setting="footer_top"
+    ) Use audio
+    p.print(
+      data-print-step="1"
+      data-print-setting="footer_bottom"
+    ) for the best expirience

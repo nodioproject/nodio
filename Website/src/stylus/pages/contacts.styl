@@ -1,0 +1,311 @@
+@import "../variables.styl"
+
+/* Contacts styles */
+#contacts
+  .page-header
+    padding 71px 0 78px
+  // .header
+  //   font-size 60px
+  //   font-weight 700
+  //   color $contacts-header-color
+  //   letter-spacing 4px
+    
+  form
+    display inline-block
+    vertical-align top
+    margin-bottom 31px
+  
+    &.message-form
+      size 361px 299px
+      margin-right 59px
+      .send
+        margin-top -1px
+        .point
+          z-index -1
+    &.subscribe-form
+      size 421px 299px
+    &.error
+      .send
+        border-color $torch_red
+        .error-message
+          opacity 1
+          z-index 0
+        .point
+          background-color $torch_red
+          transition background-color 0.2s linear
+        button
+          opacity 0
+    &.sent
+      .form-content-wrap
+        border-color $turquoise
+      input
+      textarea
+        color $turquoise
+        -webkit-text-fill-color $turquoise
+        border-color $turquoise
+      .send
+        border-color $turquoise
+        .send-message
+          opacity 1
+          z-index 0
+        button
+          opacity 0
+    &.hide-text
+      input
+      textarea
+        color transparent
+        -webkit-text-fill-color transparent
+      
+        
+
+  .form-content-wrap
+    relative false
+    padding 30px 30px 19px
+    border 1px solid $contacts-button-border-color
+    transition border-color 0.2s linear
+    border-bottom 0 none
+    
+  .input-wrap
+    size 100% 61px
+    relative false
+    box-sizing border-box
+    
+    .error ~ .point
+      background-color $torch_red
+    .point
+      background-color $contacts-input-point-color
+      transition background-color 0.2s linear
+      &.top
+        top 0
+      &.left
+        left 0
+      &.right
+        right 0
+      &.bottom
+        bottom 0
+    
+  input
+  textarea
+    font-size 18px
+    font-weight 300
+    padding 18px 27px
+    box-sizing border-box
+    outline none
+    background-color transparent
+    color $contacts-input-color
+    -webkit-text-fill-color $contacts-input-color
+    letter-spacing 1px
+    border 1px solid $contacts-input-border-color
+    transition border-color 0.2s linear,
+               color 0.2s linear,
+               -webkit-text-fill-color 0.2s linear,
+               background-color  50000s ease-in-out 50000s
+    +placeholder()
+      color $contacts-input-placeholder-color
+      opacity 1 !important
+    &:hover
+    &:focus
+      border-color $white
+    &.error
+      color $torch_red
+      -webkit-text-fill-color $torch_red
+      border-color $torch_red
+      
+  input
+    size 100% 61px
+  textarea
+    display block
+    size 100% 180px
+    margin -1px 0 0
+    border-top 0 none
+    border-bottom 0 none
+    resize none
+    border-top 1px solid transparent
+    border-bottom 1px solid transparent
+    
+  .send
+    relative false
+    size 100% 61px
+    box-sizing border-box
+    border 1px solid $contacts-button-border-color
+    transition border-color 0.2s linear
+    &:hover
+      border-color $contacts-button-color
+
+  .send-message
+  .error-message
+    absolute 0
+    z-index -1
+    box-sizing border-box
+    transition opacity 0.2s linear
+    opacity 0
+  .send-message
+    padding 21px 0 21px 27px
+    font-size 18px
+    font-weight 600
+    letter-spacing 3px
+    text-transform uppercase
+    color $contacts-button-color
+  .error-message
+    padding 12px 0 12px 27px
+    font-size 14px
+    line-height 18px
+    color $torch_red
+    .error-title
+    .error-text
+      display block
+    .error-title
+      text-transform uppercase
+      font-weight 600
+    .error-text
+      font-weight 400
+        
+    
+  button
+    size 100%
+    box-sizing border-box
+    padding 0 0 0 27px
+    outline none
+    text-align left
+    font-size 18px
+    font-weight 600
+    letter-spacing 3px
+    text-transform uppercase
+    color $contacts-button-color
+    background-color transparent
+    border 0 none
+    cursor pointer
+    transition opacity 0.2s linear
+    &.error
+      opacity 0
+    .mobile
+      display none
+    
+  h2
+    font-size 30px
+    font-weight 700
+    margin-bottom 29px
+    
+  .text
+    padding-right 20px
+    font-size 12px
+    font-weight 300
+    line-height 17px
+    letter-spacing 0.5px
+    margin-top 19px
+    
+  .page-footer
+    padding-bottom 27px
+
+  .socials
+    font-size 0
+    .social
+      relative false
+      display inline-block
+      vertical-align middle
+      size 61px
+      margin 0 59px 0 0
+      fill $turquoise-20
+      transition fill 0.2s linear,
+                 background-color 0.2s linear
+      &:after
+        content ''
+        size 59px 1px
+        margin auto
+        absolute 0 false 0 61px
+        background-color $contacts-button-border-color
+      &:hover
+        fill $turquoise
+      &:last-of-type:before
+        content ''
+        size 1px
+        margin auto
+        absolute 0 false 0 120px
+        background-color $turquoise
+      svg
+        &.social-logo
+          absolute 0
+          z-index 1
+          margin auto
+          size 40%
+          fill $white
+          stroke transparent
+        &.social-border
+          absolute 0 false 0 0
+          z-index 0
+          size 120px 61px
+    .nodio
+      margin-left 8px
+      display inline-block
+      vertical-align middle
+      span
+        font-size 16px
+        font-weight 300
+        transition text-shadow 0.3s linear
+        &:hover
+          text-shadow 0 0 2px $white
+  .links
+    margin-top 38px
+    padding 10px 0 20px 5px
+    text-align center
+    
+
++media-query(only screen, max-width 480px)
+  #contacts
+    button
+      .full
+        display none
+      .mobile
+        display inline
+    
++media-query(only screen, max-width $mobileWidth)
+  #contacts
+    .page-header
+      padding 0 0 30px
+    form
+      &.message-form
+      &.subscribe-form
+        display block
+        width 100%
+        max-width 421px
+        margin-left auto
+        margin-right auto
+    .socials
+      relative false
+      size 305px 230px
+      margin auto
+      .social
+        padding 0
+        &:after
+        &:before
+          display none
+      .facebook
+        absolute 0 false false 0
+      .twitter
+        absolute 0 false false 122px
+      .slack
+        absolute 0 false false 244px
+      .reddit
+        absolute 61px false false 61px
+      .github
+        absolute 61px false false 183px
+      .btt
+        absolute 122px false false 122px
+      .nodio
+        absolute false 0 0
+        text-align center
+        margin 0 auto
+        
+$start = 720px
+$step = 60px
+for $i in 0..30
+  $height = $start + $i * $step
+  $before = floor($i / 2) * $step
+  $after = floor(($i + 1) / 2) * $step
+  +media-query(only screen, min-height $height)
+    #contacts .page-content
+      &:before
+        height $before
+      &:after
+        height $after
+        

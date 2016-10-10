@@ -1,0 +1,162 @@
+@import "../variables.styl"
+
+/* Products common styles */
+.product
+  .number
+  .illustrations
+  .illustration
+  .lines
+  .title
+  .text
+  .texts
+  .links
+  .next-link
+    animation-name fade-out
+    animation-duration 0.5s
+    animation-timing-function linear
+    animation-delay 0s
+    animation-fill-mode forwards
+    opacity 0
+  &.show
+    .number
+      animation-name fade-in
+      animation-duration 0.5s
+    .illustrations
+      animation-name fade-in
+    .illustration
+      &.device
+        animation-name slide-down-centered
+        animation-duration 1s
+      &.phone
+        animation-name fade-in
+        animation-duration 1s
+        animation-delay 1s
+      &.border
+        animation-name blink
+        animation-duration 0.5s
+        animation-delay 0.9s
+    .lines
+      animation-name blink
+      animation-duration 0.5s
+      animation-delay 0.9s
+    .title
+      animation-name fade-in
+      animation-duration 1.5s
+      animation-delay 1.5s
+    .texts
+    .text
+      animation-name fade-in
+      animation-duration 1.5s
+      animation-delay 2s
+    .links
+      animation-name fade-in
+      animation-duration 1s
+      animation-delay 2s
+    .next-link
+      animation-name fade-in
+      animation-duration 0.5s
+      animation-delay 2s
+    
+    
+  .page-header
+    relative false
+    height 150px
+    margin 60px 0 0
+  .number
+    absolute -3px false false -4px
+    z-index -1
+    font-size 200px
+    line-height 150px
+    font-weight 700
+    color rgba(23, 229, 178, 0.1)
+    letter-spacing 15px
+  .page-content
+    relative false
+  .illustrations
+    relative false
+    size 100% auto
+    font-size 0
+    margin auto
+    transform-origin 50% 50%
+    &:before
+      content ''
+      display block
+      padding-top 51%
+  .illustrations-container
+    absolute -30px -30px 0
+  .illustration
+    absolute 50% false false 50%
+    transform translate3d(-50%, -50%, 0)
+    transform-origin 50% 50%
+    margin auto
+    size 901px
+    max-width 100%
+    max-height 200%
+    
+    background-position 50% 50%
+    background-size 100% auto
+    background-repeat no-repeat
+    &.border
+      z-index 1
+    &.phone
+      z-index 2
+    
+  .texts
+    min-height 98px
+  .title
+  .text
+    min-height 90px
+    display inline-block
+    vertical-align baseline
+    color $white
+  .title
+    width 390px
+    text-align left
+    font-size 38px
+    font-weight 300
+    .bold
+      font-size 66px
+      font-weight 700
+      line-height 52px
+      
+  .dot
+    display inline-block
+    size 9px
+    margin 0 0 2px 6px
+    background-color $common-dot-background-color
+    transform rotate(45deg)
+
+  .page-footer
+    size 100% 167px
+    max-width 841px
+  .text
+    width 450px
+    text-align left
+    font-size 14px
+    font-weight 300
+    line-height 30px
+    letter-spacing 0.5px
+    
+  .next-link
+    absolute false 0 25px
+    margin auto
+    
++media-query(only screen, max-width $mobileWidth)
+  .product 
+    .page-header
+      relative 0 0 false
+      height 90px
+      margin 0 0 60px
+      .number
+        absolute -25px false false -36px
+
+    .title
+      absolute 0 false false 0
+    .texts
+      min-height auto
+      .text
+        width 100%
+        padding 0
+        text-align center
+    .page-footer
+      position static

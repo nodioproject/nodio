@@ -1,0 +1,118 @@
+@import "../variables.styl"
+
+/* Team styles */
+#team
+  // .page-wrap
+  //   padding 68px 0 46px
+  .page-header
+    padding 68px 0 69px
+  .page-content
+    padding-bottom 35px
+  .header
+  .text-right
+    display inline-block
+    vertical-align middle
+  .header
+    // font-size 60px
+    // font-weight 700
+    // color $white
+    margin 0 63px 8px 0
+    // letter-spacing 4px
+    
+  .text-right
+    width 458px
+    font-size 12px
+    font-weight 300
+    line-height 24px
+    letter-spacing 0.75px
+    color $white-50
+  
+  .persons
+    font-size 0
+    margin-top -60px
+  
+  .person
+    relative false
+    display inline-block
+    vertical-align top
+    size 179px 59px
+    margin 61px 59px 0 0
+    border-left 1px solid $white-20
+    box-sizing border-box
+    transition border-color $transition-time linear
+    cursor pointer
+    &:nth-of-type(4n)
+      width 120px
+      margin-right 0
+    &:hover
+      border-color $white
+      
+    &.empty
+      border 0 none
+      cursor default
+    &.fill
+      display none
+      height 0
+      margin 0
+      border-left 1px solid transparent
+    .data
+      padding 8px 0 8px 8px
+      color $white
+      .name
+        font-size 21px
+        font-weight 700
+        margin-bottom 6px
+        letter-spacing 1px
+      .position
+        font-size 14px
+        font-weight 300
+        letter-spacing 0.75px
+        
+    .point
+      background-color $white
+      transition background-color $transition-time linear
+      
++media-query(only screen, max-width $mobileWidth)
+  #team
+    .page-header
+      padding 0
+    .title
+    .text-right
+      width 100%
+      margin 0
+      box-sizing border-box
+    .persons
+      text-align justify
+      &:after
+        content ''
+        width 100%
+        display inline-block
+    .person
+      width 139px
+      margin 61px 0 0 0
+      &:nth-of-type(4n)
+        width 139px
+      &.empty
+        size 0
+        absolute false
+      &.fill
+        display inline-block
+    
+$start = 700px
+$step = 60px
+for $i in 0..30
+  $height = $start + $i * $step
+  if $i < 4
+    $before = 0 * $step
+    $after = $i * $step
+  else 
+    $before = floor(($i - 2) / 2) * $step
+    $after = floor(($i + 3) / 2) * $step
+    
+  +media-query(only screen, min-height $height)
+    #team .page-content
+      &:before
+        height $before
+      &:after
+        height $after
+     

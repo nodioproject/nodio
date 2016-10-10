@@ -1,0 +1,48 @@
+@import "../variables.styl"
+
+/* Preloader styles */
+#preloader
+  display none
+  .user-data
+    absolute 30px 50px false
+    z-index 3
+    overflow hidden
+    
+    dl
+      padding 10px 0
+      font-size $header-font-size
+      line-height $header-line-height
+      text-transform uppercase
+      transition margin-top 0.3s linear
+      &.progress
+        padding-bottom 30px
+    dt
+    dd
+      vertical-align middle
+      opacity 0.3
+    dt
+      display inline-block
+      width 110px
+    dd
+      display inline
+      &.percent
+        opacity 0.7
+
+  .user-data-block
+    absolute 52px 0 0
+    overflow hidden
+    
+  .use-audio
+    width 100%
+    absolute false 0 50px 0
+    z-index 2
+    text-align center
+    text-transform uppercase
+    
+    p
+      padding 8px 0
+      opacity .75
+      display block
+      margin auto
+      line-height $footer-font-size
+      font-size $footer-font-size

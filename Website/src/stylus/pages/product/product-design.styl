@@ -1,0 +1,28 @@
+@import "../variables.styl"
+
+/* Product design styles */
+#product-design
+  .illustration
+    &.device
+      retina-image('~images/pages/product-design.png', 100% auto, "@2x")
+    &.phone
+      retina-image('~images/pages/product-design-phone.png', 100% auto, "@2x")
+    &.border
+      retina-image('~images/pages/product-design-border.png', 100% auto, "@2x")
+        
+  &.show
+    .illustration.border
+      animation-delay 1.8s
+
+for $i in 0..30
+  $height = $expand_height + $i * $expand_height_step
+  $content = floor($i / 2) * $expand_height_step
+  $texts = ceil(floor(($i + 1) / 2) * $expand_height_step / 2)
+  +media-query(only screen, min-height $height)
+    #product-design
+      .page-content
+        margin-top $content
+      .texts
+        &:before
+        &:after
+          height $texts

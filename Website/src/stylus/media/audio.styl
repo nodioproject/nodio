@@ -1,0 +1,112 @@
+@import "../variables.styl"
+
+/* Audio styles */
+#audio-block
+  absolute 29px 29px false false
+  z-index 100
+  margin 0
+  transition width 0.2s linear,
+             top 0.2s linear,
+             right 0.2s linear
+  .audio_switcher
+  .hamburger-menu
+    size 31px
+    box-sizing border-box
+    display inline-block
+    vertical-align top
+    cursor pointer
+  .audio_switcher
+    padding 2px 6px 6px 7px
+    margin-left 28px
+    line-height 20px
+    opacity 0.2
+    transition opacity 0.2s linear
+    &:hover
+      opacity 1
+      
+    .vizualizer-bar
+      size 1px 10px
+      display inline-block
+      vertical-align bottom
+      margin-right 1px
+      background-color $turquoise
+      transition height 0.3s linear,
+                 background-color 1s linear
+      &:nth-child(1)
+        height 20%
+      &:nth-child(2)
+        height 60%
+      &:nth-child(3)
+        height 80%
+      &:nth-child(4)
+        height 40%
+      &:nth-child(5)
+        height 70%
+      &:nth-child(6)
+        height 30%
+      &:nth-child(7)
+        height 10%
+      &:nth-child(8)
+        height 60%
+        
+  .hamburger-menu
+    absolute 0 0 false false
+    display none
+    &:hover
+      .lines
+        background-color $turquoise
+    .hamburger-wrap
+      absolute 0
+      margin auto
+      size 23px 15px
+    .lines
+      absolute 0
+      margin auto
+      size 100% 1px
+      transition background-color 0.2s linear
+      background-color $turquoise-20
+      &:before
+      &:after
+        content ''
+        absolute false 0
+        display block
+        size 100% 1px
+        background-color inherit
+      &:before
+        top 8px
+      &:after
+        bottom 8px
+        
+    
+
+  #crowdsale
+    display inline-block
+    relative false
+    min-width 122px
+    height 31px
+    margin-left 0
+    padding 0 10px
+    box-sizing border-box
+    text-align center
+    text-transform uppercase
+    text-decoration none
+    font-size 12px
+    font-weight 700
+    line-height 31px
+    color rgba(23, 229, 178, 1) !important
+    border 1px solid rgba(23, 229, 178, 0.2)
+    transition border-color 0.2s linear,
+               margin-left 0.2s linear
+    &:hover
+      border-color rgba(23, 229, 178, 1)
+
++media-query(only screen, max-width $mobileWidth)
+  #audio-block
+    absolute 0 0 false false
+    width 50%
+    #crowdsale
+      margin-left -61px
+    .audio_switcher
+      display none
+    .hamburger-menu
+      display block

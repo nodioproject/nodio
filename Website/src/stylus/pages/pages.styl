@@ -1,0 +1,90 @@
+@import "../variables.styl"
+
+/* Pages common styles */
+
+  
+.pages
+  size 100%
+  max-width 901px
+  box-sizing border-box
+  margin auto
+  relative 
+  
+.page
+  overflow hidden
+  relative false
+  box-sizing border-box
+  opacity 0
+  max-height 0
+  padding 0 30px
+  transition opacity $content-show-transition-time linear,
+             max-height 0s linear $content-show-transition-time,
+             overflow 0s linear $content-show-transition-time
+  &.show
+    z-index 1
+    overflow visible
+    opacity 1
+    max-height 10000px
+    transition opacity $content-show-transition-time linear,
+               max-height 0s linear,
+               overflow 0s linear
+  p
+    text-align left
+  
+  .page-content
+    &:before
+    &:after
+      content ''
+      display block
+      size 100% 0
+      transition height 0.2s linear
+    
+  .page-header
+    .header
+      font-size 60px
+      font-weight 700
+      color $white
+      letter-spacing 4px
+      transition font-size 0.2s linear
+
+  .page-footer
+    relative false
+    padding-bottom 30px
+
++media-query(only screen, max-width $mobileWidth)
+  .page
+    max-width 600px
+    margin 0 auto !important
+    &.product
+      max-width 100%
+      .page-footer
+        static false
+    .page-header
+      padding-bottom 35px !important
+    .header
+      width 100% !important
+      margin-left 0 !important
+      margin-right 0 !important
+      margin-bottom 0 !important
+      padding-left 0
+      padding-right 0
+      text-align center
+    .text-right
+      margin 30px auto 0 !important
+      display block
+      max-width none !important
+      width 100% !important
+      text-align justify
+      -moz-text-align-last center
+      text-align-last center
+    .text
+      text-align justify
+      -moz-text-align-last center
+      text-align-last center
+
+
++media-query(only screen, max-width 480px)
+  .page
+    .page-header
+      .header
+        font-size 45px

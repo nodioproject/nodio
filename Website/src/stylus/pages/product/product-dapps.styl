@@ -1,0 +1,48 @@
+@import "../variables.styl"
+
+/* Product open styles */
+#product-dapps
+  .illustration
+    &.device
+      retina-image('~images/pages/product-dapps.png', 100% auto, "@2x")
+    &.border
+      retina-image('~images/pages/product-dapps-border.png', 100% auto, "@2x")
+  .lines
+    size 100%
+    absolute 0
+    margin auto
+    .line
+      absolute false 0
+      margin auto
+      height 42%
+      relative false
+      width 1px
+      background-color $turquoise-10
+      &:before
+      &:after
+        content ''
+        display block
+        margin auto
+        size 1px
+        background-color $turquoise-20
+      &:before
+        absolute 0 0 false
+      &:after
+        absolute false 0 0
+      &.top
+        bottom 24.8%
+      &.bottom
+        top 1%
+      
+for $i in 0..30
+  $height = $expand_height + $i * $expand_height_step
+  $content = floor($i / 2) * $expand_height_step
+  $texts = ceil(floor(($i + 1) / 2) * $expand_height_step / 2)
+  +media-query(only screen, min-height $height)
+    #product-dapps
+      .page-content
+        margin-top $content
+      .texts
+        &:before
+        &:after
+          height $texts

@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    include assets/head.pug
+  body
+    include ../images/svg-sprite.pug
+    #background
+      #glow
+        .glow-container
+          svg
+            use(xlink:href="#glow-svg")
+      .container
+        //- include media/video.pug
+        .navigation
+          .navigation-content
+            include navigation/sidebar.pug
+            include media/audio.pug
+        include navigation/faq.pug
+        include navigation/pagination.pug
+        .pages
+          include pages/product/product.pug
+          include pages/product/product-router.pug
+          include pages/product/product-steady.pug
+          include pages/product/product-dapps.pug
+          include pages/product/product-design.pug
+          include pages/product/product-tech.pug
+          include pages/xana.pug
+          include pages/dapps.pug
+          include pages/team.pug
+          include pages/contacts.pug
+      include pages/modal/modal.pug

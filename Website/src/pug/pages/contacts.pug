@@ -1,0 +1,132 @@
+#contacts.page(data-title="Contact us")
+  .page-header
+    h1.header Contact us
+
+  .page-content
+    form.message-form.send-form(name="message" action="/php/send.php" method="post")
+      .input-wrap
+        input(
+          type="text"
+          name="email"
+          placeholder="E-mail"
+        )
+        .point.top.left
+        .point.top.right
+        .point.bottom.left
+        .point.bottom.right
+      textarea(
+        name="message"
+        placeholder="Message"
+      )
+      .send
+        button(
+          name="submit"
+          type="submit"
+          data-text="Send"
+        ) Send
+        .send-message(data-text="Message sent")
+        .error-message
+          .error-title
+          .error-text
+        .point.top.left
+        .point.top.right
+        .point.bottom.left
+        .point.bottom.right
+
+    form.subscribe-form.send-form(name="subscribe" method="post" action="/php/send.php")
+      .form-content-wrap
+        .point.top.left
+        .point.top.right
+        h2 Get Involved!
+        .input-wrap
+          input(
+            type="text"
+            name="email"
+            placeholder="E-mail"
+          )
+          .point.top.left
+          .point.top.right
+          .point.bottom.left
+          .point.bottom.right
+        p.text Subscribe to receive an occasional newsletter about Nodio. We value your privacy and guarantee to keep your email address safe.
+
+      .send
+        button.subscribe(
+          name="submit"
+          type="submit"
+          data-text="Subscribe for a newsletter"
+        ) Subscribe for 
+          span.full a newsletter
+          span.mobile news
+        .send-message(data-text="Subscribe success")
+        .error-message
+          .error-title
+          .error-text
+        .point.top.left
+        .point.top.right
+        .point.bottom.left
+        .point.bottom.right
+
+  .page-footer
+    .socials
+      a.social.facebook(
+        href="http://fb.me/nodioproject"
+        title="Facebook"
+        target="_blank"
+      )
+        svg.social-logo
+          use(xlink:href="#facebook")
+        svg.social-border
+          use(xlink:href="#socials")
+      a.social.twitter(
+        href="https://twitter.com/nodioproject"
+        title="Twitter"
+        target="_blank"
+      )
+        svg.social-logo
+          use(xlink:href="#twitter")
+        svg.social-border
+          use(xlink:href="#socials")
+      a.social.slack(
+        href="https://nodio.slack.com"
+        title="Slack"
+        target="_blank"
+      )
+        svg.social-logo
+          use(xlink:href="#slack")
+        svg.social-border
+          use(xlink:href="#socials")
+      a.social.reddit(
+        href="https://www.reddit.com/user/Nodioproject/"
+        title="Reddit"
+        target="_blank"
+      )
+        svg.social-logo
+          use(xlink:href="#reddit")
+        svg.social-border
+          use(xlink:href="#socials")
+      a.social.github(
+        href="https://github.com/nodioproject"
+        title="Github"
+        target="_blank"
+      )
+        svg.social-logo
+          use(xlink:href="#github")
+        svg.social-border
+          use(xlink:href="#socials")
+      a.social.btt(
+        href="http://btt.com"
+        title="Btt"
+        target="_blank"
+      )
+        svg.social-logo
+          use(xlink:href="#btt")
+        svg.social-border
+          use(xlink:href="#socials")
+      .nodio
+        span nodioproject
+
+    .links
+      a.link.modal-link(href="#modal-terms") Terms of Use
+      .delimiter
+      a.link.modal-link(href="#modal-policy") Privacy Policy

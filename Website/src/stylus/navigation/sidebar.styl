@@ -1,0 +1,100 @@
+@import "../variables.styl"
+
+/* Sidebar styles */
+#sidebar
+  size 120px 100%
+  absolute 0 false 0 0
+  z-index 3
+.logo
+  size 61px
+  absolute 29px false false 29px
+  transition width 0.2s linear,
+             height 0.2s linear,
+             top 0.2s linear,
+             left 0.2s linear
+  svg
+    size 100%
+    fill rgba(255, 255, 255, 1)
+    transition fill 0.2s linear
+  .logo-text
+    height 12px
+    absolute 0 false 0 90px
+    margin auto
+    text-transform uppercase
+    color #FFF
+    font-size 12px
+    line-height 12px
+    font-weight 600
+    white-space nowrap
+    
+.menu
+  margin-top 151px
+  margin-left 29px
+  .menu-item
+    height 29px
+    margin-top 31px
+    display none
+    &.show
+      display block
+  .menu-link
+    display inline-block
+    size auto 100%
+    min-width 10px
+    padding 0 10px
+    relative false
+    color #FFF
+    line-height 29px
+    font-size 12px
+    font-weight 600
+    text-decoration none
+    text-align left
+    text-transform uppercase
+    transition min-width $sidebar-out-transition-time linear,
+               color $sidebar-transition-time linear
+    .line
+      absolute false 0 0
+      size 100% 1px
+      display block
+      background-color $white-20
+      transition background-color $sidebar-line-transition-time linear
+      &:before
+      &:after
+        content ''
+        absolute 0 false
+        size 1px
+        background-color $white
+        transition background-color $sidebar-line-transition-time linear
+      &:before
+        left 0
+      &:after
+        right 0
+    &.active
+      min-width 41px
+      color $turquoise
+      cursor default
+      transition min-width $sidebar-transition-time linear
+      .line
+        background-color $turquoise-20
+        &:before
+        &:after
+          background-color $turquoise
+      &:hover
+        .line
+          background-color $turquoise
+    &:hover
+      min-width 41px
+      .line
+        background-color $white
+          
++media-query(only screen, max-width 1080px)
+  .logo-text
+  .menu-link .print-character
+    display none
++media-query(only screen, max-width $mobileWidth)
+  #sidebar
+    size 60px
+  .logo
+    size 31px
+    absolute 0 false false 0
+  .menu
+    display none

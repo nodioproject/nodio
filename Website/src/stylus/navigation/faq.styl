@@ -1,0 +1,20 @@
+@import "../variables.styl"
+
+/* FAQ styles */
+#faq
+  absolute false 29px 46px false
+  z-index 100
+  display block
+  size 31px
+  line-height 30px
+  font-size 18px
+  font-weight 600
+  color rgba(23, 229, 178, 0.2)
+  text-decoration none
+  text-align center
+  transition color 0.2s linear
+  &:hover
+    color rgba(23, 229, 178, 1)
++media-query(only screen, max-width $mobileWidth)
+  #faq
+    display none

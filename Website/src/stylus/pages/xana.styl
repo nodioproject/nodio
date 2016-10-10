@@ -1,0 +1,120 @@
+@import "../variables.styl"
+
+/* Xana styles */
+#xana
+  // .page-wrap
+  //   padding 68px 0 75px
+  .page-header
+    padding 68px 0 54px 
+  .page-content
+    padding-bottom 3px
+    // margin-bottom -20px
+  .header
+  .text-right
+    display inline-block
+    vertical-align middle
+  .header
+    size 255px 45px
+    fill $white
+    margin-right 45px
+  .text-right
+    width 540px
+    font-size 12px
+    font-weight 300
+    line-height 24px
+    letter-spacing 0.75px
+    color $white-50
+  .subheader
+    margin-bottom 49px
+    font-size 18px
+    line-height 24px
+    font-weight 300
+    letter-spacing 1px
+    .bold
+      font-weight 700
+  .features
+    font-size 0
+  .feature
+    display inline-block
+    vertical-align top
+    width 241px
+    margin 0 59px 28px 0
+    &:nth-of-type(3n)
+      margin-right 0
+    .title
+      margin-bottom 8px
+      font-size 30px
+      font-weight 700
+      text-align center
+    .text
+      font-size 12px
+      font-weight 300
+      line-height 24px
+      letter-spacing 0.25px
+      color $white-50
+      text-align justify
+      -moz-text-align-last center
+      text-align-last center
+    &.illustration
+      relative false
+      height 94px
+      .illustration
+        absolute 50% false false 50%
+        transform translate(-50%, -50%)
+        size 421px 211px
+        retina-image('~images/pages/xana.png', 100% auto, "@2x")
+        background-size 100% auto
+        background-position 50% 50%
+        background-repeat no-repeat
+    
++media-query(only screen, max-width $mobileWidth)
+  #xana
+    .page-header
+      width 100%
+      padding 0 0 60px
+      .header
+      .text-right
+        box-sizing border-box
+      .header
+        margin-top 8px
+        margin-bottom 40px
+        margin-left 0
+      .text-right
+        width 100%
+        // max-width 480px
+        margin 0 auto
+        text-align justify
+        -moz-text-align-last center
+        text-align-last center
+    .page-content
+      .subheader
+        width 100%
+        box-sizing border-box
+        text-align center
+      .feature
+        display block
+        width 100%
+        // max-width 480px
+        margin 0 auto
+        padding-bottom 60px
+        box-sizing border-box
+        &.illustration
+          display none
+          
+$start = 720px
+$step = 60px
+for $i in 0..30
+  $height = $start + $i * $step
+  if $i < 3
+    $before = 0 * $step
+    $after = $i * $step
+  else 
+    $before = floor(($i - 1) / 2) * $step
+    $after = floor(($i + 2) / 2) * $step
+    
+  +media-query(only screen, min-height $height)
+    #xana .page-content
+      &:before
+        height $before
+      &:after
+        height $after
